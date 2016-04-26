@@ -24,7 +24,7 @@ WEInput.style.position = "relative"
 WEInput.style.top = "10px"
 WEInput.placeholder = "Work Efficiency"
 WEInput.id = "WorkEff"
-WEInput.autofocus
+WEInput.autofocus = true
 
 div.appendChild(WEInput)
 document.body.appendChild(div)
@@ -51,3 +51,7 @@ let calc = () => {
   document.getElementById('Tier4Count').innerHTML = t4Amount.toFixed(1)
   document.getElementById('Tier5Count').innerHTML = t5Amount.toFixed(1)
 }
+
+window.setInterval(function(){
+    calc()
+}, 5000)
