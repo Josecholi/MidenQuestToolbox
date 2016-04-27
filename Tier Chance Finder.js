@@ -1,3 +1,4 @@
+(function () {
   // Create mutation observer
   let target = document.getElementById("TsLog")
   let config = { childList: true, subtree: true }
@@ -59,3 +60,4 @@
     $('#T4Guess').text(' Maybe ' + t4t.toFixed())
     $('#T5Guess').text(' Maybe ' + t5t.toFixed())
   }
+})()
