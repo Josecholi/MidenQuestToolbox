@@ -1,19 +1,17 @@
 (function () {
-  let currentWorkload = 0
-  let max = 0
   let isWorking = true
-  setInterval( () => {
+  const name = document.getElementById('SideName').innerHTML
+  setInterval(() => {
     let WL = document.getElementById('prgActionOverlay').innerHTML
     WL = (WL.split(' ')).pop()
-    currentWorkload = WL.split('/')[0]
-    max = WL.split('/')[1]
-    document.title = currentWorkload + "/" + max
+    const currentWorkload = WL.split('/')[0]
+    document.title = '&{currentWorkload} actions left'
     if (currentWorkload.length < 1 && isWorking === true) {
-      alert("Don't forget work!")
+      alert('Don\'t forget work, ${name} !')
       isWorking = false
     }
     if (currentWorkload.length > 0 && isWorking === false) {
       isWorking = true
     }
   }, 400)
-})()
+}())
