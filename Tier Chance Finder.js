@@ -24,6 +24,7 @@
       t4t = 0,
       t5t = 0
 
+  // Names of the resources that are gathered
   const t1s = ["Plant Stem", "Iron ore", "Pine log", "Tuna"]
   const t2s = ["Cotton", "Silver ore", "Oak log", "Salmon"]
   const t3s = ["Living Leather", "Obsidian ore", "Maple log", "Flyfish"]
@@ -48,12 +49,14 @@
     }
     actions++
 
+    // Maths to figure out your chances
     let t1t = 100 * t1 / actions
     let t2t = 100 * t2 / actions
     let t3t = 100 * t3 / actions
     let t4t = 100 * t4 / actions
     let t5t = 100 * t5 / actions
 
+    // Write out each chance to the GUI we created earlier
     $('#T1Guess').text(' Maybe ' + t1t.toFixed())
     $('#T2Guess').text(' Maybe ' + t2t.toFixed())
     $('#T3Guess').text(' Maybe ' + t3t.toFixed())
