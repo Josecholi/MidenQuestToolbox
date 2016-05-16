@@ -1,4 +1,7 @@
+// The game calculates this behind the scenes, but it's hard to calculate yourself
+// This script calculates it for you and outputs it to the GUI in a simple way
 (function () {
+  // Parse out the numbres the GUI gives us
   let lvl = parseInt(
     document.getElementById('WorkLvl')
     .innerHTML.substr(0, document.getElementById('WorkLvl')
@@ -39,6 +42,7 @@
      }
   }
 
+  // The maths that are normally done behind the scenes
   let calc = () => {
     let t1Amount = (lvl + workEff + bonusRes) / 100 + 1
     let t2Amount = t1Amount * 7 / 9
@@ -46,15 +50,12 @@
     let t4Amount = t1Amount * 5 / 9
     let t5Amount = t1Amount * 4 / 9
 
+    // Outputs the math to the GUI so it's easy to find
     document.getElementById('Tier1Count').innerHTML = t1Amount.toFixed(1)
     document.getElementById('Tier2Count').innerHTML = t2Amount.toFixed(1)
     document.getElementById('Tier3Count').innerHTML = t3Amount.toFixed(1)
     document.getElementById('Tier4Count').innerHTML = t4Amount.toFixed(1)
     document.getElementById('Tier5Count').innerHTML = t5Amount.toFixed(1)
   }
-
-  window.setInterval(function(){
-      calc()
-  }, 5000)
 
 })();
